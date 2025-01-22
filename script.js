@@ -22,3 +22,13 @@ document.getElementById('resetButton').addEventListener('click', function() {
     document.getElementById('removeLineBreaks').checked = false;
     document.getElementById('removeParagraphBreaks').checked = false;
 });
+
+// New functionality for copying output text to clipboard
+document.getElementById('copyButton').addEventListener('click', function() {
+    const outputText = document.getElementById('outputText').value;
+    navigator.clipboard.writeText(outputText).then(function() {
+        alert('Output text copied to clipboard!');
+    }, function(err) {
+        console.error('Could not copy text: ', err);
+    });
+});
