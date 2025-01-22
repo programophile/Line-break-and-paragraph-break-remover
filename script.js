@@ -13,6 +13,9 @@ document.getElementById('processButton').addEventListener('click', function() {
         outputText = outputText.replace(/\n\n/g, ' '); // Replace paragraph breaks with a space
     }
 
+    // Replace multiple spaces with a single space and trim leading spaces
+    outputText = outputText.replace(/\s+/g, ' ').trim();
+
     document.getElementById('outputText').value = outputText;
 });
 
