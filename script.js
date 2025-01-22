@@ -30,7 +30,24 @@ document.getElementById('resetButton').addEventListener('click', function() {
 document.getElementById('copyButton').addEventListener('click', function() {
     const outputText = document.getElementById('outputText').value;
     navigator.clipboard.writeText(outputText).then(function() {
-        alert('Output text copied to clipboard!');
+        // Create a notification element
+        const notification = document.createElement('div');
+        notification.textContent = 'Output text copied to clipboard!';
+        notification.style.position = 'fixed';
+        notification.style.bottom = '20px';
+        notification.style.right = '20px';
+        notification.style.backgroundColor = '#4CAF50';
+        notification.style.color = 'white';
+        notification.style.padding = '10px';
+        notification.style.borderRadius = '5px';
+        notification.style.zIndex = '1000';
+        
+        document.body.appendChild(notification);
+        
+        // Automatically remove the notification after 3 seconds
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 3000);
     }, function(err) {
         console.error('Could not copy text: ', err);
     });
