@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Line and Paragraph Break Remover</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Line and Paragraph Break Remover</h1>
+        <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+        <div class="options">
+            <label><input type="checkbox" id="removeLineBreaks"> Remove Line Breaks</label>
+            <label><input type="checkbox" id="removeParagraphBreaks"> Remove Paragraph Breaks</label>
+        </div>
+        <button id="processButton">Process Text</button>
+        <button id="resetButton">Reset</button>
+        <h2>Output:</h2>
+        <textarea id="outputText" placeholder="Processed text will appear here..." readonly></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
